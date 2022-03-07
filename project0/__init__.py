@@ -83,3 +83,28 @@ def extractincidents(data):
         tlis.append(tuple(i))
     #print(tlis)
     return tlis
+
+def createdb():
+    con = sqlite3.connect('normanpd.db')
+    cur = con.cursor()
+    cur.execute('''CREATE TABLE if not exists incidents (
+        incident_time TEXT,
+        incident_number TEXT,
+        incident_location TEXT,
+        nature TEXT,
+        incident_ori TEXT)''')
+    return cur
+
+def populatedb(cur,tlis):
+
+    # Deleting the values in the table to avoid inserting the same values when we execute more than one time
+    #cur.execute('DELETE from incidents')
+    cur.executemany('INSERT INTO incidents VALUES (?,?,?,?,?)', tlis)
+    return cur
+def status(cur):
+    stlist=[]
+    for row in cur.execute('SELECT nature, count(nature) FROM incidents where nature is not null GROUP BY nature ORDER BY count(nature) DESC,nature ASC'):
+        stlist.append(row)
+        print("%s|%d" % (row[0], row[1]))
+
+    return stlist
