@@ -66,3 +66,20 @@ def extractincidents(data):
             del i[3]
 
 
+    for i in range(len(temp)):
+        j = len(temp[i])
+        while len(temp[i]) < 5:
+            temp[i].append('null')
+        num = temp[i][j - 1]
+        temp[i].pop(j - 1)
+        temp[i].append(num)
+
+    for j in temp:
+        lis.append(j)
+        #print(lis)
+
+    tlis = []
+    for i in lis:
+        tlis.append(tuple(i))
+    #print(tlis)
+    return tlis
