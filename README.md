@@ -1,5 +1,5 @@
 # cs5293sp22-project0
-RMAN POLICE DEPARTMENT,DAILY INCIDENT SUMMARY EXTRACTION
+NORMAN POLICE DEPARTMENT,DAILY INCIDENT SUMMARY EXTRACTION
 
 Norman, Oklahoma police regularly report arrests, incidents, and other
 activities. This information is distributed to the public in PDF format
@@ -35,7 +35,7 @@ main.py in it.
 I've written code for five functions in the __init__.py file. I called
 these functions that I wrote in __init__.py in the main.py file.
 
-1. fetchincidents(url):
+1. **fetchincidents(url):**
     As an input parameter, I used url. To read the file, I used 
     urlib.request.urlopen to open it from the website of the Norman 
     Police Department.This function returns a byte stream named data.
