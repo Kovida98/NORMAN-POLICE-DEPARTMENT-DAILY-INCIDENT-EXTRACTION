@@ -39,7 +39,7 @@ these functions that I wrote in __init__.py in the main.py file.
     As an input parameter, I used url. To read the file, I used 
     urlib.request.urlopen to open it from the website of the Norman 
     Police Department.This function returns a byte stream named data.
-2. extractincidents(data):
+2. **extractincidents(data):**
     In a brief, this function reads PDF file and extracts incidents,
     which contain values of data/time, incident number, location,
     nature, and incident ORI.
@@ -75,17 +75,17 @@ these functions that I wrote in __init__.py in the main.py file.
     Finally,by iterating through sequence of parameters in list lis,
     I changed the type of parameter from list to tuple.This function
     returns a list of values of each row in the form of tuple.
-3. createdb():
+3. **createdb():**
     This function creates a database named "normanpd.db" and a table
     if it doesnot exist already named incidents with the columns 
     incident time,incident number,incident location,nature,incident ori
     using cur.execute(), which accepts the sql query.
-4. populatedb(cur,tlis):
+4. **populatedb(cur,tlis):**
     As an input parameters, i passed cur and tuplelist which is 
     returned from extractincidents function.Here, cur.executemany()
     method is used to insert the values to the table by iterating 
     through the sequence of parameters in tuple.
-5. status(cur):
+5. **status(cur):**
     From the database, this function displays the nature and the
     number of times it has occurred. Here, the function returns list
     of tuple of nature and count of it.
