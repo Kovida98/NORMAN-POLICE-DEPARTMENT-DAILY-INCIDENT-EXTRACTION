@@ -35,4 +35,34 @@ def extractincidents(data):
     sp_page3=sp_page2.rstrip()
 
 
+# Now get all the other pages
+    for pagenum in range(1, pagecount):
+        sp_page3 = sp_page3 + pdfReader.getPage(pagenum).extractText()
+
+    s = re.split(r'\d*\/\d*\/\d{4}\s\d*:\d*', sp_page3)
+    #print(s)
+    f = re.findall(r'\d*\/\d*\/\d{4}\s\d*:\d*', sp_page3)
+    #print(f)
+    del s[0]
+
+    l1 = []
+    for i in range(len(s)):
+        l1.append(f[i] + s[i])
+    #print(l1)
+    lis = []
+    for i in l1:
+        sp = i.split("\n")
+        del sp[-1]
+        lis.append(sp)
+    del lis[-1]
+    temp = []
+    for i in lis:
+        if len(i) < 5:
+            temp.append(i)
+            lis.remove(i)
+        elif len(i) == 6:
+            m=i[2]+i[3]
+            i[2]=m
+            del i[3]
+
 
