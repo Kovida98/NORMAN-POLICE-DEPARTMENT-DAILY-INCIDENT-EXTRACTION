@@ -1,5 +1,4 @@
 import project0
-#from project0 import __init__.project0.fetchincidents(None)
 import pytest
 
 def test_fetch_incidents():
