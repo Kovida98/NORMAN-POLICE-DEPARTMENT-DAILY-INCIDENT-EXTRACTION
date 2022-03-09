@@ -124,7 +124,7 @@ all these functions that I wrote in `__init__.py` in the main.py file.
     desired results: 
     `SELECT nature, count(nature) FROM incidents where nature is not null GROUP BY nature ORDER BY count(nature) DESC,nature ASC`
 
-##TEST CASES:
+## TEST CASES:
 
 Here i have created a folder named tests which contains five test cases 
 files to test each function which i have written in `__init__.py`.
@@ -178,7 +178,7 @@ To run test cases we can use any one of the following commands
 
 `pipenv run pytest` or `pipenv run python -m pytest`
 
-##ASSUMPTIONS and BUGS:
+## ASSUMPTIONS and BUGS:
 
 I assumed that all the incident report PDFs in their webpage has
 empty spaces for the columns named location and nature and this project
