@@ -32,13 +32,13 @@ def extractincidents(data):
     sp_page1 = page1.replace("NORMAN POLICE DEPARTMENT", "")
     sp_page2 = sp_page1.replace("Daily Incident Summary (Public)", "")
     sp_page3 = sp_page2.rstrip()
-    print(sp_page3)
+    #print(sp_page3)
     sp_page3 = sp_page3 + "\n"
 
     # Now get all the other pages
     for pagenum in range(1, pagecount):
         sp_page3 = sp_page3 + pdfReader.getPage(pagenum).extractText()
-    print(sp_page3)
+    #print(sp_page3)
 
     # contains all cell values excluding date/time values
     s = re.split(r'\d*\/\d*\/\d{4}\s\d*:\d*', sp_page3)
