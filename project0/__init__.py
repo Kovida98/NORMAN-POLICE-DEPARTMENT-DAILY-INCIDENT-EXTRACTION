@@ -28,7 +28,6 @@ def extractincidents(data):
 
     # Get the first page
     page1 = pdfReader.getPage(0).extractText()
-    #sp_page1 = page1.strip()
     sp_page1 = page1.replace("NORMAN POLICE DEPARTMENT", "")
     sp_page2 = sp_page1.replace("Daily Incident Summary (Public)", "")
     sp_page3 = sp_page2.rstrip()
